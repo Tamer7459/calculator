@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="calcule">
+        <input type="text" id="display" value="0" readonly>
+        <div class="buttons">
+            <button onclick="append('(')" class="top extra-buttons">(</button>
+            <button onclick="append(')')" class="top extra-buttons">)</button>
+            <button onclick="memoryClear()" class="top extra-buttons">mc</button>
+            <button onclick="memoryPlus()" class="top extra-buttons">m+</button>
+            <button onclick="memoryMinus()" class="top extra-buttons">m−</button>
+            <button onclick="clearDisplay()" class="btn">AC</button>
+            <button onclick="backspace()" class="btn">⌫</button>
+            <button onclick="percent()" class="btn">%</button>
+            <button onclick="append('/')" class="color">÷</button>
+
+            <button onclick="append('square(')" class="top extra-buttons">x²</button>
+            <button onclick="append('cube(')" class="top extra-buttons">x³</button>
+            <button onclick="append('^')" class="top extra-buttons">xʸ</button>
+            <button onclick="append('exp(')" class="top extra-buttons">eˣ</button> 
+            <button onclick="memoryRecall()" class="top extra-buttons">mr</button> 
+            <button onclick="append('7')" class="top">7</button>
+            <button onclick="append('8')" class="top">8</button>
+            <button onclick="append('9')" class="top">9</button>
+            <button onclick="append('*')" class="color">×</button>
+
+            <button onclick="append('sqrt(')" class="top extra-buttons">√x</button>
+            <button onclick="append('cbrt(')" class="top extra-buttons">∛x</button>
+            <button onclick="append('1/')" class="top extra-buttons">1/x</button>
+            <button onclick="append('ln(')" class="top extra-buttons">ln</button>
+            <button onclick="append('log(')" class="top extra-buttons">log</button>
+            <button onclick="append('4')" class="top">4</button>
+            <button onclick="append('5')" class="top">5</button>
+            <button onclick="append('6')" class="top">6</button>
+            <button onclick="append('-')" class="color">-</button>
+
+            <button onclick="append('factorial(')" class="top extra-buttons">x!</button>
+            <button onclick="append('sin(')" class="top extra-buttons">sin</button>
+            <button onclick="append('cos(')" class="top extra-buttons">cos</button>
+            <button onclick="append('tan(')" class="top extra-buttons">tan</button>
+            <button onclick="append('e')" class="top extra-buttons">e</button>
+            <button onclick="append('1')" class="top">1</button>
+            <button onclick="append('2')" class="top">2</button>
+            <button onclick="append('3')" class="top">3</button>
+            <button onclick="append('+')" class="color">+</button>
+
+            <button onclick="toggleRadDeg(this)" class="top extra-buttons" id="toggle">Rad</button>
+            <button onclick="append('arcsin(')"class=" extra-buttons">sin⁻¹</button>
+            <button onclick="append('arccos(')" class="top extra-buttons">cos⁻¹</button>
+            <button onclick="append('arctan(')" class="top extra-buttons">tan⁻¹</button>
+            <button onclick="append('π')" class="top extra-buttons">π</button>
+            <button class="logo-btn" onclick="toggleExtra()" id="logoBtn">⮝</button>
+            <button onclick="append('0')" class="top">0</button>
+            <button onclick="append('.')" class="top">.</button>
+            <button onclick="calculate()" class="color">=</button>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

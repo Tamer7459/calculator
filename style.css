@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calcule {
+    width: 900px;
+    border-radius: 20px;
+    padding: 20px;
+    color: black;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+    color: white;
+
+}
+#display {
+    background-color: black;
+    color: white;
+    font-size: 48px;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: none;
+    width: 100%;
+    overflow-x: auto;       /* هذا يسمح بالتمرير الأفقي */
+    white-space: nowrap;      /* يمنع نزول النص لسطر جديد */
+    direction: ltr;           /* يجعل التمرير يبدأ من اليمين إلى اليسار */
+}
+button , .top {
+    background-color:#333;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    color: white;
+}
+.top:hover {
+    background-color: #444;
+}
+.color {
+    background-color: #fd9500;
+    color: white;
+}
+.btn{
+    background-color: #a5a5a5;
+    color: white;
+}
+
+/* تحريك عند الإظهار والإخفاء */
+/* اجعل الأزرار الإضافية مخفية مبدئيًا مع أنيميشن */
+.extra-buttons {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.extra-buttons.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.extra-buttons.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* تحريك زر Logo */
+#logoBtn {
+    transition: transform 0.4s ease;
+}
+
+/* عند تفعيل الإظهار، يدور الزر */
+#logoBtn.rotated {
+    transform: rotate(180deg);
+}
+
+
+/* ✅ اجعل الآلة الحاسبة تستجيب تلقائيًا لحجم الشاشة */
+@media (max-width: 768px) {
+    .calcule {
+        width: 95%;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(4, 1fr); /* عدد أعمدة أقل للشاشات الصغيرة */
+        justify-content: center;
+    }
+
+    .extra-buttons {
+        display: none !important; /* إخفاء الأزرار الإضافية تلقائيًا على الشاشات الصغيرة */
+    }
+}
+
+/* ✅ عند إخفاء الأزرار الإضافية، يتم توسيط الباقي تلقائيًا */
+.buttons {
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* عند إخفاء الأزرار الإضافية، نعيد ترتيب الشبكة */
+.buttons.centered {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    justify-content: center;
+}
+
